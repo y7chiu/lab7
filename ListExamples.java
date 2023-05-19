@@ -8,10 +8,10 @@ class ListExamples {
   // Returns a new list that has all the elements of the input list for which
   // the StringChecker returns true, and not the elements that return false, in
   // the same order they appeared in the input list;
-  static List<String> filter(List<String> list, StringChecker sc) {
+  static List<String> filter(List<String> list, StringChecker kc) {
     List<String> result = new ArrayList<>();
     for(String s: list) {
-      if(sc.checkString(s)) {
+      if(kc.checkString(s)) {
         result.add(0, s);
       }
     }
@@ -24,6 +24,8 @@ class ListExamples {
   static List<String> merge(List<String> list1, List<String> list2) {
     List<String> result = new ArrayList<>();
     int index1 = 0, index2 = 0;
+    System.out.println(index1);
+    System.out.println(index2);
     while(index1 < list1.size() && index2 < list2.size()) {
       if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
         result.add(list1.get(index1));
@@ -41,10 +43,10 @@ class ListExamples {
     while(index2 < list2.size()) {
       result.add(list2.get(index2));
       // change index1 below to index2 to fix test
-      index1 += 1;
-    }
+      index2 += 1;
+    
     return result;
   }
 
 
-}
+}}
